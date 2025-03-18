@@ -40,21 +40,21 @@
                     <div class="logo-nav-search">
                         <div class="logo-wrapper">
                             <div class="logo">
+                                <?php $logoimg = get_header_image() ?>
                                 <a href="">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/products/logo.png" alt="">
+                                    <img src="<?php echo $logoimg ?>" alt="">
                                 </a>
                                 <div class="logo-content">
                                     <a href=""><h2>Pak West Chemicals.com</h2></a>
                                     <p>Fertilizers,Agrochemicals,<br>Microneutriants,Pesticides</p>
                                 </div>
                             </div>
-                        </div>
-                        
-                            <nav>
+                        </div>                      
+                            <nav id="nav-menu">
                             <?php wp_nav_menu(array('theme_location' => 'primary_menu','menu_class' => 'nav')) ?>
                             </nav>
                             <div class="nav-icon">
-                                <a href=""><i class="fa-solid fa-bars" onclick="toggleMenue()"></i>Menu</a>
+                                <a href="" id="menu-toggle" ><i class="fa-solid fa-bars"></i>Menu</a>
                             </div>
                         
                         <div class="search">

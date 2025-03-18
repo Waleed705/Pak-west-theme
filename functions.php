@@ -19,4 +19,8 @@ function add_dropdown_arrow_to_menu_items( $items, $args ) {
     return $items;
   }
   add_filter( 'wp_nav_menu_objects', 'add_dropdown_arrow_to_menu_items', 10, 2 );
+
+  wp_enqueue_script('custom-script', get_template_directory_uri() . '/script.js', array(), '1.0', true);
+  add_theme_support('post-thumbnails');
+  add_theme_support('custom-header');
 ?>

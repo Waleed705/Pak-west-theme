@@ -198,25 +198,19 @@
             <div class="latest-articals">
                 <h1>Latest Articles</h1>
                 <div class="articals">
-                <div class="artical">
-                        <img src="<?php echo get_template_directory_uri(); ?>/products/potato.jpg" alt="">
-                        <h3>Potato Production Plan</h3>
-                        <p>/ 21 September 2020</p>
-                    </div>
+                    <?php while(have_posts()){
+                        the_post();
+                        $imgpath = wp_get_attachment_image_src(get_post_thumbnail_id(),'large')
+                        ?>
                     <div class="artical">
-                        <img src="<?php echo get_template_directory_uri(); ?>/products/wheat.jpg" alt="">
-                        <h3>Wheat Production Plan</h3>
-                        <p>/ 29 September 2020</p>
+                        <img src="<?php echo $imgpath[0] ?>" alt="">
+                        <a href="<?php the_permalink() ?>"><h3><?php the_title(); ?></h3></a>
+                        <p>/ <?php echo get_the_date() ?></p>
                     </div>
-                    <div class="artical">
-                        <img src="<?php echo get_template_directory_uri(); ?>/products/farmer.jpg" alt="">
-                        <h3>ہمارا کسان</h3>
-                        <p>/ 24 September 2020</p>
-                    </div>
+                    <?php } ?>
                 </div>
             </div>
             <?php get_footer() ?>
         </div>
-        <script src="<?php echo get_template_directory_uri(); ?>/script.js"></script>
     </body>
     </html>

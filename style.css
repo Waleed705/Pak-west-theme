@@ -53,6 +53,7 @@
     gap: 5px;
 }
 .logo-nav-wrapper{
+    position: relative;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -105,7 +106,7 @@ nav ul{
     position: relative;
 }
 .nav li a:hover,
-.nav li a.active {
+.nav li a:active{
     text-decoration: none;
     color: black;
     background-color: rgb(5, 184, 5);
@@ -307,7 +308,7 @@ nav ul{
     flex-direction: column;
     gap: 15px;
 }
-.artical h3:hover{
+.artical a h3:hover{
     color: green;
     cursor: pointer;
 }
@@ -419,9 +420,49 @@ nav ul{
 .nav-icon{
     display: none;
 }
+.artical a{
+    text-decoration: none;
+    color: black;
+}
+.articals-content-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.artical-content{
+    width: 60%;
+}
 @media screen and (min-width:300px) and (max-width:499px){
-    nav{
+    .active{
         display: none;
+    }
+    nav{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        border-top: 1px solid black;
+        height: 300px;
+    }
+    .nav li{
+        height: auto;
+        position: relative;
+    }
+    nav ul{
+        display: flex;
+        flex-direction: column; 
+        gap: 20px;
+    }
+    nav ul li{
+        width: 100%;
+    }
+    nav ul li ul{
+        position: relative;
+        width: 100%;
+    }
+    .menu-item ul {
+        position: relative;
     }
     .head-contect-wrapper{
         display: none;
@@ -449,6 +490,9 @@ nav ul{
         grid-template-columns: 1fr;
         padding: 20px 0px;
         row-gap: 10px;
+    }
+    .footer-wrapper{
+        padding: 10px;
     }
     .footer{
         grid-template-columns: 1fr;
@@ -513,7 +557,26 @@ nav ul{
 }
 @media screen and (max-width:1023px) and (min-width:500px){
     nav{
-        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        border-top: 1px solid black;
+        height: auto;
+        padding: 40px;
+        
+    }
+    nav ul{
+        display: flex;
+        flex-direction: column; 
+    }
+    nav ul li{
+        width: 100%;
+    }
+    nav ul li ul{
+        position: absolute;
+        width: 100%;
     }
     .head-contect-wrapper{
         display: none;
